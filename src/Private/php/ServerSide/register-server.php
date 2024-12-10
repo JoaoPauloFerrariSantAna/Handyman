@@ -2,34 +2,29 @@
 
 session_start();
 
-require_once "../Database/db-queries.php";
-require_once "../Database/db-query-check.php";
-require_once "../Enums/UserAccStat.php";
-// require_once "../json.php";
+require_once "../Database/Database.php";
+require_once "../Database/db-checkages.php";
 
-use Database\Checkage;
-use Enums\UserAccStat;
-
-$has_reg = Enums\UserAccStat\StudentStat::HAS_REG;
-
-// $student_data = get_json();
 $name	= trim($_POST["student-name"]);
 $ra	= trim($_POST["student-ra"]);
 $course = trim($_POST["student-course"]);
 
-if(Database\Checkage\is_student_registered($ra) == $has_reg->value) {
+if(!is_student_unregistered($ra)) {
 	echo "Estudante já possui conta.";
 	exit(1);
 }
 
-insert_into_db($name, $ra, $course);
+$db = new Database();
+$db->insert("student_tbl(student_name, student_ra, student_course)", array($name, $ra, $course));
 
-$student = get_credentials($ra)->fetch_row();
+$suid = $db->select("student_id", "student_tbl", "student_ra = ", array($ra));
 
-$_SESSION["uid"]	= $student[0];
-$_SESSION["sname"]	= $student[1];
-$_SESSION["sra"]	= $student[2];
-$_SESSION["scourse"]	= $student[3];
+$_SESSION["uid"] = $suid[0];
+$_SESSION["sname"] = $name;
+$_SESSION["sra"] = $ra;
+$_SESSION["scourse"] = $course;
+
+unset($db);
 
 header("Location: ../Student/profile.php");
 
