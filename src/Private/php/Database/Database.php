@@ -1,6 +1,6 @@
 <?php
 
-require_once "../utils.php";
+require_once __DIR__ . "/../Utils/concatenate.php";
 
 final class Database
 {
@@ -79,7 +79,7 @@ final class Database
 	    $placeholders = concatenate_placeholders($query_values);
 	    $query_types = str_repeat('s', $query_values);
 
-	    $select = "SELECT " . $what . " FROM " . $table. "WHERE " . $where . $placeholders;
+	    $select = "SELECT " . $what . " FROM " . $table. " WHERE " . $where . $placeholders;
 
 	    $statement = $this->connection->prepare($select);
 	    $statement->bind_param($query_types, ...$query_data);
@@ -90,13 +90,17 @@ final class Database
 	    return $result;
     }
 
-
-    public function update(string $table, string $what, array $new_info, $where): void
+    public function update(string $table, string $what, string $to, string $where, array $new_info): void
     {
 	    $query_values = count($new_info);
 	    $placeholders = concatenate_placeholders($query_values);
 	    $query_types = str_repeat('s', $query_values);
-	
+	    $update = "UPDATE " . $table. " SET " . $what . " = " . $to . " WHERE " . $where . $placeholders;
+
+	    $statement = $this->connection->prepare($update);
+	    $statement->bind_param($query_types, ...$new_info);
+	    $statement->execute();
+	    $statement->close();
     }
     
     public function select_join(string $what, string $table): mysqli_result | bool
@@ -105,5 +109,4 @@ final class Database
 	    $data = $this->connection->query($select);
 	    return $data;
     }
-
 }
