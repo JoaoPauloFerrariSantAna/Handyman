@@ -1,7 +1,4 @@
-<?php
-require_once "../Database/db-student-queries.php";
-require_once "../DisplayData/display.php";
-?>
+<?php require_once "../DisplayData/display.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
