@@ -1,14 +1,5 @@
-function prepareReq(data) {
-	const formData = new FormData();
-
-	formData.append(data.getAttribute("name"), data.value.trim());
-
-	return formData;
-}
-
 function updateStudentCourse() {
 	const newCourse = document.getElementById("new-course");
-	const req	= prepareReq(newCourse);
 	const xhr	= new XMLHttpRequest();
 
 	xhr.open("POST", "../ServerSide/ch-cour-server.php", true);
@@ -25,7 +16,8 @@ function updateStudentCourse() {
 		window.location.reload();
 	}
 
-	xhr.send(req);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+	xhr.send(`${newCourse.getAttribute("name")}=${newCourse.value.trim()}`);
 
 	return false;
 }
