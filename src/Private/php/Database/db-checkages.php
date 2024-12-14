@@ -4,7 +4,7 @@ require_once "Database.php";
 
 function is_student_unregistered(string $ra): bool {
 	/**
-	 * * This function will check if the student is already registered in the DB
+	 * This function will check if the student is already registered in the DB
 	 *
 	 * @author	João Paulo Ferrari Sant'Ana 	joaopauloferrarisanta@gmail.com
 	 * @version	3.0.0				Will return an int that represents the student row
@@ -14,16 +14,13 @@ function is_student_unregistered(string $ra): bool {
 	 *
 	 * @return bool 
 	 * */
-
 	$db = new Database();
 	$student_row = $db->select("student_ra", "student_tbl", "student_ra =", array($ra));
-
 	unset($db);
-
 	return empty($student_row);
 }
 
-function is_student_acc_disabled(string $ra): bool {
+function is_acc_disabled(string $ra): bool {
 	/**
 	 * This function will check if the student account is disabled
 	 *
@@ -38,12 +35,9 @@ function is_student_acc_disabled(string $ra): bool {
 	 * @return bool 
 	 * */
 	$db = new Database();
-
 	$acc_status = $db->select("student_active", "student_tbl", "student_ra =", array($ra))->fetch_array(MYSQLI_NUM);
-
 	unset($db);
-
-	return (empty($acc_status[0]) ? true : boolval($acc_status[0]));
+	return ($acc_status[0] == 1 ? false : true);
 }
 
 ?>
