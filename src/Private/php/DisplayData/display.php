@@ -1,8 +1,7 @@
 <?php
 
 require_once "../Database/Database.php";
-require_once "../Database/db-data-format.php";
-require_once "../Database/db-student-queries.php";
+require_once __DIR__ . "/../Utils/format.php";
 
 function display_all_posts(): void {
 	/**
@@ -10,17 +9,19 @@ function display_all_posts(): void {
 	 * post card in the home page
 	 *
 	 * @author	João Paulo Ferrari Sant'Ana	joaopauloferrarisantana@gmail.com
-	 * @version 	1.0.0				Will select and make a post in home page
+	 * @version 	2.0.0				Will select and make a post in home page
 	 * @since	2.0.0
 	 * */
-	$posts = select_all_student_posts();
+	$db = new Database();
+	$posts = $db->select_join("Problem.problem_title Title, Problem.problem_desc DSC, Problem.problem_block Block, Student.student_name Author", "problem_tbl Problem INNER JOIN student_tbl Student ON Problem.student_id = Student.student_id");
+
+	unset($db);
 
 	while($post_data = $posts->fetch_assoc()) {
-		$title	= $post_data["Title"];
-		$desc	= $post_data["DSC"];
-		$block	= $post_data["Block"];
-		$author	= $post_data["Author"];
-
+		$title = $post_data["Title"];
+		$desc = $post_data["DSC"];
+		$block = $post_data["Block"];
+		$author = $post_data["Author"];
 		generate_post_home($title, $desc, $block, $author);
 	}
 }
@@ -43,9 +44,9 @@ function display_posts(string $suid): void {
 	unset($db);
 
 	while($post_data = $posts->fetch_assoc()) {
-		$title	= $post_data["Title"];
-		$desc	= $post_data["DSC"];
-		$block	= $post_data["Block"];
+		$title = $post_data["Title"];
+		$desc = $post_data["DSC"];
+		$block = $post_data["Block"];
 		generate_post_profile($title, $desc, $block);
 	}
 }
