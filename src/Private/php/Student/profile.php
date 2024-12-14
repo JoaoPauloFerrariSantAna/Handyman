@@ -1,6 +1,4 @@
-<?php 
-
-require_once "../DisplayData/display.php";
+<?php require_once "../DisplayData/display.php";
 
 session_start();
 

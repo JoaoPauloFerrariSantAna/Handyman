@@ -3,11 +3,10 @@
 session_start();
 
 require_once "../Database/Database.php";
-require_once "../Database/db-queries.php";
 require_once "../Database/db-checkages.php";
 
-$name	= trim($_POST["student-name"]);
-$ra	= trim($_POST["student-ra"]);
+$name = trim($_POST["student-name"]);
+$ra = trim($_POST["student-ra"]);
 $course = trim($_POST["student-course"]);
 
 if(is_student_unregistered($ra)) {
@@ -15,7 +14,7 @@ if(is_student_unregistered($ra)) {
 	exit(1);
 }
 
-if(!is_student_acc_disabled($ra)) {
+if(is_acc_disabled($ra)) {
 	echo "Conta do estudante foi desabilitada.";
 	exit(1);
 }

@@ -95,6 +95,7 @@ final class Database
 	    $query_values = count($new_info);
 	    $placeholders = concatenate_placeholders($query_values);
 	    $query_types = str_repeat('s', $query_values);
+
 	    $update = "UPDATE " . $table. " SET " . $what . " = '" . $to . "' WHERE " . $where . $placeholders;
 
 	    $statement = $this->connection->prepare($update);
