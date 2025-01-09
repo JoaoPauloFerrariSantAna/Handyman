@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../Utils/concatenate.php";
 
-final class Database
+class Database
 {
     public function __construct()
     {
