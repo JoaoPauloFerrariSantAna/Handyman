@@ -3,21 +3,20 @@
 session_start();
 
 require_once "../Database/Database.php";
-require_once "../Database/db-checkages.php";
+require_once "../Database/DatabaseCheckage.php";
 
 $name = trim($_POST["student-name"]);
 $ra = trim($_POST["student-ra"]);
 $course = trim($_POST["student-course"]);
 
-if(is_student_unregistered($ra)) {
-	echo "Estundate não está registrado.";
-	exit(1);
-}
+$dbc = new DatabaseCheckage();
 
-if(is_acc_disabled($ra)) {
+if($dbc->is_disabled("student_active", "student_tbl", "student_ra =", array($ra))) {
 	echo "Conta do estudante foi desabilitada.";
 	exit(1);
 }
+
+unset($dbc);
 
 $db = new Database();
 
