@@ -1,7 +1,5 @@
 # About the Handyman project
-# About the Handyman project
 
-Handyman is a site to post complains found at the Unimar university.
 Handyman is a site to post complains found at the Unimar university.
 Simple and straight to the point.
 
@@ -11,15 +9,12 @@ The project was made for a assignment at the group's current university, Unimar.
 The assignment purpose was quite simple: to make something that could 
 help the university.
 And _Handyman_ is here to do just that!
-And _Handyman_ is here to do just that!
 
-## About Handyman
 ## About Handyman
 
 This project is quite simple: let there be a problem-- an lightbulb explodes
 in some hall where students pass through with frequency, its shards falls into
 the ground waiting for someone step and cut his feet. But you can't warn
-everyone, so what do you do? With Handyman, you could warn not just the
 everyone, so what do you do? With Handyman, you could warn not just the
 students, but also the faculty itself that something bad had happened!
 
