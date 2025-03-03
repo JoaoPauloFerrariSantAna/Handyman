@@ -51,4 +51,23 @@ function display_posts(string $suid): void {
 	}
 }
 
+function display_student_info(string $name, string $course, string $ra): void {
+// TODO: make it better
+echo '
+<nav id="student-data">
+	<ol>
+		<li><a href="#">'.$name.'</a></li>
+		<li>'.$course.'</li>
+		<li>'.$ra.'</li>
+	</ol>
+</nav>
+<nav id="student-misc">
+	<ol>
+		<li><a href="../logoff.php" onclick="endSession()">Deslogar</a></li>
+		<li><a href="../account-config.php">Configurar Conta</a></li>
+	</ol>
+</nav>
+';
+}
+
 ?>

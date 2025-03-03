@@ -1,21 +1,48 @@
+:root {
+	--student-info-padding: 1rem;
+}
+
+#student-data ol {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#student-data ol > li {
+	padding: var(--student-info-padding);
+}
+
+#student-misc ol > li {
+	padding: var(--student-info-padding);
+}
+
+#student-misc ol {
+	display: flex;
+	justify-content: space-around;
+}
+
+#main-container {
+	display: flex;
+}
+
+#navigation {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#navigation li {
+	padding: var(--list-padding);
+}
+
+#navigation a {
+	text-decoration: none;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.navbar li {
-	padding: var(--list-padding);
-}
-
-.navbar a {
-	text-decoration: none;
 }
 
 .logo-container {

@@ -1,4 +1,6 @@
-<?php require_once "../DisplayData/display.php";
+<?php
+
+require_once "../DisplayData/display.php";
 
 session_start();
 
@@ -17,27 +19,9 @@ $uid = $_SESSION["uid"];
 		<link rel="stylesheet" type="text/css" href="../../../Public/css/profile.css">
 		<link rel="stylesheet" type="text/css" href="../../../Public/css/post.css">
 	</head>
-	<body onload="loadStudentInfo()">
+	<body>
 		<header id="main-header" class="header">
-			<div id="student-container-info">
-				<div class="name-classroom">
-					<div id="student-name-container">
-						<p class="student-info"></p>
-					</div>
-					<div id="student-ra-container">
-						<p class="student-info"></p>
-					</div>
-				</div>
-				<div id="student-course-container">
-					<p class="student-info"></p>
-				</div>
-			</div>
-			<nav class="header-nav">
-				<ol class="navbar">
-					<li><a href="../logoff.php" onclick="endSession()">Deslogar</a></li>
-					<li><a href="account-config.php">Configurar Conta</a></li>
-				</ol>
-			</nav>
+			<?php display_student_info($_SESSION["sname"], $_SESSION["scourse"], $_SESSION["sra"]); ?>
 		</header>
 		<main class="main">
 			<div id="post-container">
@@ -65,7 +49,10 @@ $uid = $_SESSION["uid"];
 		<footer class="footer">
 			<p>ManuTech group INC. &copy;2024</p>
 		</footer>
-		<script type="text/javascript" src="../../js/load-student-data.js"></script>
-	</body>
+		<script type="module">
+			import { loadHeader } from "../../../Public/js/components.js";
 
+			loadHeader("../../../Public/img/MANUTECH LOGO.jpg");
+		</script>
+	</body>
 </html>

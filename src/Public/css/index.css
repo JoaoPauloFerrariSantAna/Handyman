@@ -5,41 +5,29 @@ body {
 	background-size: 100%;
 }
 
-header{
-	color: white;
-	text-align: center;
-}
-
 main {
 	font-family: Graduate;
+	text-align: center;
+	color: white;
+	height: 80vh;
 }
 
 h2 {
 	background-color: #194576;
+	font-size: 50px;
+	background-color: darkblue;
 }
 
 .section-header {
 	margin: 10px;
 	line-height: 250%;
-	text-size-adjust: 30%;
 	font-size: 25px;
 	border: 5px solid white;
 	padding-left: var(--section-header-padding);
 }
 	  
-h2{
-	font-size: 50px;
-	background-color: darkblue;
-}
-
 .point-to-other-page {
 	color: #0F76B0;
-}
-
-main{
-	text-align: center;
-	color: white;
-	height: 80vh;
 }
 
 .txt-color {

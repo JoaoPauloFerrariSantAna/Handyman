@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 	<head>
-
 		<title>Manutech - Sobre o projeto</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,58 +8,18 @@
 		<link rel="stylesheet" type="text/css" href="../css/general.css">
 		<link rel="stylesheet" type="text/css" href="../css/header.css">
 		<link rel="stylesheet" type="text/css" href="../css/about-project.css">
-
 	</head>
-
 	<body>
-
 		<header class="header">
-
-			<div id="logo-container">
-
-				<img src="../img/MANUTECH LOGO.jpg" alt="ManuTechlogo"
-				class="icon-site" id="manutech-logo">
-
-			</div>
-
-			<div id="site-title">
-
-				<h1>MANUTECH</h1>
-
-			</div>
-
-			<nav id="navigation">
-
-				<ol class="navbar">
-
-					<li><a href="index.html">Home</a></li>
-					<li><a href="login.html">Logar</a></li>
-					<li><a href="register.html">Criar conta</a></li>
-
-				</ol>
-
-			</nav>
-
+			<h2>Sobre o projeto ManuTech</h2>
 		</header>
-
-
 			<section id="introduction">
-
-				<header class="introduction-header">
-					
-
-					<h2>Sobre o projeto ManuTech:</h2>
-
-				</header>
-
 				<div class="introduction-text">
-
 					<p>
 						Este projeto possui uma proposta um tanto quanto humilde: servir de ponto <br> para que
 						as pessoas da faculdade Unimar possam fazer suas reclamações<br> sobre coisas que não
 						deveriam estar lá em primeiro lugar.
 					</p>
-
 					<p>
 						Um exemplo do qual "ManuTech" seria útil seria quando ocorreu uma<br> tempestade, e algum
 						poste cai em algum local do qual estudantes<br> costumam passar. O aluno pode então ir e
@@ -70,59 +28,28 @@
 						ninguém perceber e, mais tarde, alguém pisar desavidamente em um<br> de seus cacos de
 						vidros.
 					</p>
-
 				</div>
-
 			</section>
-
 			<section class="members-name-header">
 				<h2>Membros do Projeto:</h2>
-
 			</section>
-
-			<div class="members-name">
-				<ol>
-
-					<li><span class="mem-name">João Paulo Ferrari Sant'Ana</span></li>
-					<li><span class="mem-name">Noah Vêri de Morais Franco Aleluia</span></li>
-					<li><span class="mem-name">Higor Luiz Bicudo</span></li>
-					<li><span class="mem-name">Joaquim Pedro Augusto de Castro Leite Oliveira</span></li>
-					<li><span class="mem-name">José Rodolfo Faustino Guimares Junior</span></li>
-				</ol>
-
-			</div>
-
-
+			<div class="members-name"></div>
 			<section id="tools-used">
-
 				<header class="tools-used-header">
-
 					<h2>Ferramentas Utilizadas neste projeto:</h2>
-				
 				</header>
-				<div class="tools-used">
-					
-					<ol>
-
-						<li><span class="tools-used">Hypertext Markup Language (HTML)</span></li>
-						<li><span class="tools-used">Cascading Styling Sheets (CSS)</span></li>
-						<li><span class="tools-used">Javascript (JS)</span></li>
-						<li><span class="tools-used">Personal Home Page / Hypertext Preprocessor (PHP)</span></li>
-						<li><span class="tools-used">PHPUnit MySQL Markup Validation Service</span></li>
-						<li><span class="tools-used">Figma</span></li>
-					</ol>
-				
-				</div>
-
+				<div class="tools-used"></div>
 			</section>
-
 		</main>
-
 		<footer class="footer">
-
 			<p>Manutech group INC. &copy;2024</p>
-
 		</footer>
+		<script type="module">
+			import { loadHeader, loadNavbar, loadTools, loadMembers } from "../js/components.js"
+			loadHeader("../img/MANUTECH LOGO.jpg");
+			loadNavbar(["about-project", "login", "register", "index"]);
+			loadTools();
+			loadMembers();
+		</script>
 	</body>
-
 </html>

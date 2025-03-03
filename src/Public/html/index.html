@@ -9,47 +9,13 @@
 		<link rel="stylesheet" type="text/css" href="../css/header.css">
 		<link rel="stylesheet" type="text/css" href="../css/index.css">
 	</head>
-
 	<body>
-		<header class="header">
-
-			<div id="logo-container">
-
-				<img src="../img/MANUTECH LOGO.jpg" alt="ManuTech logo"
-				class="icon-site"id="manutech-logo">
-
-			</div>
-
-			<div id="site-title">
-
-				<h1>MANUTECH</h1>
-
-			</div>
-
-			<nav id="navigation">
-
-				<ol class="navbar">
-
-					<li><a href="./about-project.html">Sobre o projeto</a></li>
-					<li><a href="./login.html">Login</a></li>
-					<li><a href="./register.html">Criar conta</a></li>
-
-				</ol>
-
-			</nav>
-
-		</header>
-
+		<header class="header"></header>
 		<main>
-
 			<div id="introduction">
-
 				<header id="intro-header" class="section-header">
-
 					<h2>Bem-vindo ao nosso Portal de manutenção do campus!</h2>
-
 				</header>   
-
 				<div class="intro-txt">
 					<p class="txt-color">
 						Aqui você pode solicitar serviços de manutenção para garantir
@@ -68,16 +34,15 @@
 						e fazer a sua reclamação?
 					</p>
 				</div>
-
 			</div>
-
 		</main>
-
 		<footer class="footer">
-
 			<p>Manutech group INC. &copy;2024</p>
-
 		</footer>
-
+		<script type="module">
+			import { loadHeader, loadNavbar } from "../js/components.js"
+			loadHeader("../img/MANUTECH LOGO.jpg");
+			loadNavbar(["about-project", "login", "register"]);
+		</script>
 	</body>
 </html>

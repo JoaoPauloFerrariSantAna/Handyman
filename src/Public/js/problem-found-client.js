@@ -2,13 +2,9 @@
  * @typedef {Array.string} string[]
  * */
 import { getComplains } from "../../Private/js/get-complains.js";
+import { isTitleOverLimit, isBlockTypedValid, isPostOverLimit } from "../../Private/js/post-validator.js";
 
-import { isTitleOverLimit,
-	isBlockTypedValid,
-	isPostOverLimit } from "../../Private/js/post-validator.js";
-
-document.getElementById("form-problem-found")
-	.addEventListener("submit", sendComplain, true);
+document.getElementById("form-problem-found").addEventListener("submit", sendComplain, true);
 
 /**
  * Returns if every field is valid (true) or one field is invalid (false)

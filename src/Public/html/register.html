@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 	<head>
 		<title>Manutech - Registro</title>
 		<meta charset="UTF-8">
@@ -14,101 +13,54 @@
 		<link rel="stylesheet" type="text/css" href="../css/general-form.css">
 		<link rel="stylesheet" type="text/css" href="../css/register.css">
 	</head>
-
 	<body>
-
-		<header id="main-header" class="header">
-
-			<div class="img-container">
-
-				<img src="../img/MANUTECH LOGO.jpg" alt="ManuTech logo"
-				class="icon-site" id="manutech-logo">
-
-			</div>
-
+		<header class="header">
 			<div class="pg-title-container">
-
 				<h2 class="txt-register">Cadastre-se</h2>
-
 			</div>
-
-			<nav>
-
-				<ol class="navbar">
-
-					<li><a href="./index.html" class="txt-color">Home</a></li>
-					<li><a href="./login.html" class="txt-color">Login</a></li>
-
-				</ol>
-	
-			</nav>
-		
 		</header>
-
 		<main class="main">
-
 			<form id="student-form" class="student-form-container" autocomplete="off" method="POST"
 				action="../../Private/php/ServerSide/register-server.php">
-
 				<div class="form-part">
-
 					<div class="form-aggregate">
-
 						<i class="bx bxs-user"></i>
 						<label for="student-name" class="txt-color">Nome</label>
-
 					</div>
-
 					<input type="text" name="student-name" id="student-name"
 					placeholder="O seu nome">
-
 				</div>
-
 				<div class="form-part">
-
 					<div class="form-aggregate">
-
 						<i class="bx bx-id-card"></i>
 						<label for="student-ra" class="txt-color">RA</label>
-
 					</div>
-
 					<input type="text" name="student-ra" id="student-ra"
 					placeholder="Informe o seu RA">
-
 				</div>
-
 				<div class="form-part">
-
 					<div class="form-aggregate">
-
 						<i class='bx bxs-book'></i>
 						<label for="student-course" class="txt-color">Curso</label>
-
 					</div>
-
 					<input type="text" name="student-course"
 					id="student-course" placeholder="Nome do curso">
 				</div>
-
 				<div class="submit-btn-area">
-
 					<button type="submit" id="submit-btn" class="txt-color">
 						Cadastrar
 					</button>
-
 				</div>
-			
 			</form>
-		
 		</main>
-
 		<footer class="footer">
-
 			<p><span class="footer">Manutech group INC. &copy;2024</span></p>
-	
 		</footer>
-
+		<script type="module">
+			import { loadHeader, loadNavbar } from "../js/components.js"
+			loadHeader("../img/MANUTECH LOGO.jpg");
+			loadNavbar(["about-project", "login", "register", "index"]);
+		</script>
 		<script type="module" src="../js/register-client.js"></script>
 		<script>
 			(function() {

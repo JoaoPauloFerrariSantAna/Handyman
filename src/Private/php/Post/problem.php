@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+
+require_once "../DisplayData/display.php";
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
@@ -12,19 +18,7 @@
 	</head>
 	<body onload="loadStudentInfo()">
 		<header class="header">
-			<div class="header-img-container">
-				<img src="../../../Public/img/MANUTECH LOGO.jpg" alt="ManuTech logo"
-				class="icon-site" id="manutech-logo">
-			</div>
-			<div class="header-title">
-				<h2>Faça a sua reclamação</h2>
-			</div>
-			<nav>
-				<ol class="navbar">
-					<li><a href="../Student/profile.php"><span class="student-info"></span></a></li>
-					<li><a href="../../../Public/html/index.html">Home</a></li>
-				</ol>
-			</nav>
+			<?php display_student_info($_SESSION["sname"], $_SESSION["scourse"], $_SESSION["sra"]); ?>
 		</header>
 		<main>
 			<form id="form-problem-found" method="POST"
@@ -80,12 +74,15 @@
 		<footer class="footer">
 			<p>ManuTech Group INC. &copy;2024</p>
 		</footer>
+		<script type="module" src="../../../Public/js/problem-found-client.js"></script>
 		<script>
 			(function() {
 				document.getElementById("problem-title").focus();
 			})
 		</script>
-		<script type="module" src="../../../Public/js/problem-found-client.js"></script>
-		<script type="text/javascript" src="../../js/load-student-data.js"></script>
+		<script type="module">
+			import { loadHeader } from "../../../Public/js/components.js";
+			loadHeader("../../../Public/img/MANUTECH LOGO.jpg");
+		</script>
 	</body>
 </html>
