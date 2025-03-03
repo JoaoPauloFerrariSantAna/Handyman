@@ -18,6 +18,15 @@ the ground waiting for someone step and cut his feet. But you can't warn
 everyone, so what do you do? With Handyman, you could warn not just the
 students, but also the faculty itself that something bad had happened!
 
+## Running the project
+
+It is pretty simple:
+
+1. Enter `/srv/http/` or go to `httpdoc`
+2. Just clone it with `git clone`
+3. Start XAMPP or initialize `httpd`
+4. Initialize MySQL (`mysqld`)
+
 ## Members of this project
 
 - Higor Luiz Bicudo, 2003780
